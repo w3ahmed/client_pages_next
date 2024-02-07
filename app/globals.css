@@ -2,26 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+    padding: 0 .5rem;
+}
+span, a{
+    display: inline-block;
+}
+img{
+    width: 100%;
+}
+.material-symbols-outlined{
+    font-size: inherit !important;
+}
+.radio_label input:checked ~ .checkmark_color{
+    opacity: 1;
+    position: relative;
+}
+/* .radio_label input:checked ~ .checkmark_color::after{
+    content: "\2713";
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    width: 100%;
+} */
+.checked_active{
+    opacity: 1;
+}
+.checked_active::after{
+    content: "\2713";
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.checkmark_option{
+    background-color: crimson;
+    color: white;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.check_option::before{
+    content: '\2715';
+    color: red;
+    vertical-align: middle;
+    padding: 0.5rem;
 }
